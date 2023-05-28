@@ -9,16 +9,20 @@
 # isnsna
 # oimterrm
 
-rawLines = []
 clearedLines = []
 
-with open("input_example.txt", "r") as f:
-    lines = f.readlines()
+# --- Read in .txt file, clear contents of linebreaks -> "\n" and save into a list variable
+def ReadAndClearFromTxt(fileName, outputListName):
+    with open(fileName, "r") as f:
+        lines = f.readlines()
 
-initialLinesCount = len(lines)
+    initialLinesCount = len(lines)
 
-for i in range(initialLinesCount):
-    clearedLines.append(lines[i].replace("\n", ""))
+    for i in range(initialLinesCount):
+        outputListName.append(lines[i].replace("\n", ""))
+
+ReadAndClearFromTxt("input_example.txt", clearedLines)
 
 # test result
 print(clearedLines)
+
